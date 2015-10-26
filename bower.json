@@ -3,7 +3,7 @@
   "description": "Project with Python",
   "main": "index.html",
   "authors": [
-    "Shay Hall"
+    "Shay Hall <hallshay@gmail.com>", "Rosa Lopez Sanchez <r215130@gmail.com>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/tiyd-stattracker/stattracker-gui",
