@@ -3,7 +3,8 @@
   "description": "Project with Python",
   "main": "index.html",
   "authors": [
-    "Shay Hall <hallshay@gmail.com>", "Rosa Lopez Sanchez <r215130@gmail.com>"
+    "Shay Hall <hallshay@gmail.com>",
+    "Rosa Lopez Sanchez <r215130@gmail.com>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/tiyd-stattracker/stattracker-gui",
@@ -21,6 +22,7 @@
     "modernizr": "~3.1.0",
     "jquery": "~2.1.4",
     "angular": "~1.4.7",
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "font-awesome": "~4.4.0"
   }
 }
