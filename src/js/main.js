@@ -1,6 +1,6 @@
 ;(function() {
   angular.module('StatTracker', ['ngRoute'],
-  function($routeProvider){
+    function($routeProvider){
      $routeProvider
         .when('/', {
           redirectTo: '/login',
@@ -11,12 +11,13 @@
        .when('/login',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
        })
-      })
-      // .run(function($http, $rootScope) {
-      //   $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
-      //     .then(function(response) {
-      //       $rootScope.activities = response.data;
-      //   })
+  }) //END $routeProvider    //END module
+      .controller('ListOfActivitesController', function($scope, $http) {
+        $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
+          .then(function(response) {
+            $scope.activities = response.data;
+        })
+      }) //END of 'ListOfActivitesController'
       .controller("NewActivityController", function($scope, $http) {
         $scope.activity = {
           activity_name: '',
@@ -29,11 +30,5 @@
           activity_name: '',
           start_date: ''
         };
-      // });
-}) //END module
-
-
-
-
-
+      });//END of "NewActivityController"
 })(); //END OF IIFE
