@@ -1,8 +1,12 @@
 ;(function() {
-  angular.module('StatTracker', ['ngRoute'], function($routeProvider){
+  angular.module('StatTracker', ['ngRoute'],
+  function($routeProvider){
      $routeProvider
-       .when('/', {
-         templateUrl: '.html',
+        .when('/', {
+          redirectTo: '/login',
+       })
+       .when('/login',{
+         templateUrl: 'partials/login.html',
        })
 
 }) //END module
