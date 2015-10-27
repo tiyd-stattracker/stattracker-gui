@@ -1,3 +1,10 @@
-<form class="login">
-  <input class="new-activity" type="text" placeholder="New Activity">
-</form>
+
+<h2 class="username-subheader">Shea Wolf</h2>
+<form ng-controller="NewActivityController" ng-submit="submit()">
+    <input class="new-activity" type="text" placeholder="New Activity" ng-model="activity.activity_name">
+    <input class="new-activity" type="text" placeholder="Start Date: YYYY/MM/DD" ng-model="activity.start_date">
+    <button class="create-activity" type="submit">Add Activity</button>
+  </form>
+<ul class="activity-list" ng-controller="ListOfActivitesController">
+  <li class="activity-list"  ng-repeat="activity in activities">{{activity.activity_name}}</li>
+</ul>
