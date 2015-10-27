@@ -1,10 +1,9 @@
 ;(function() {
-
   angular.module('StatTracker', ['ngRoute'], function($routeProvider){
-    // $routeProvider
-    //   .when('/', {
-    //     templateUrl: '.html',
-    //   }
+     $routeProvider
+       .when('/', {
+         templateUrl: '.html',
+       })
 
 }) //END module
 
