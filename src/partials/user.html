@@ -1,3 +1,6 @@
-<form class="login">
-  <input class="new-activity" type="text" placeholder="New Activity">
-</form>
+<ul class="activity-list">
+  <form>
+    <input class="new-activity" type="text" placeholder="New Activity" ng-model="newActivity">
+  </form>
+  <li class="activity-list"  ng-repeat="activity in activities">{{activity.activity_name}}</li>
+</ul>
