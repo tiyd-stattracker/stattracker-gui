@@ -1,0 +1,32 @@
+{
+  "name": "stattracker-gui",
+  "version": "0.0.0",
+  "description": "Project with Python",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --directory",
+    "start:dev": "browser-sync start --server --directory --startPath='dist/index.html'",
+    "sass": "node-sass src/scss/main.scss src/css/main.css",
+    "install:bower": "bower install --save",
+    "postinstall:bower": "wiredep --src 'src/*.html'",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiyd-stattracker/stattracker-gui.git"
+  },
+  "author": "Shay Hall <hallshay@gmail.com>",
+  "contributor": "Rosa Lopez Sanchez <r215130@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiyd-stattracker/stattracker-gui/issues"
+  },
+  "homepage": "https://github.com/tiyd-stattracker/stattracker-gui#readme",
+  "dependencies": {
+    "bower": "^1.6.5",
+    "browser-sync": "^2.9.11",
+    "node-sass": "^3.4.0",
+    "wiredep": "^2.2.2"
+  }
+}
