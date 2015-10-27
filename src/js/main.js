@@ -12,13 +12,24 @@
          templateUrl: 'partials/user.html',
        })
       })
-      .run(function($http, $rootScope) {
-        $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
-        // $http.get('/src/fake.json')
-          .then(function(response) {
-            $rootScope.activities = response.data;
-        })
-
+      // .run(function($http, $rootScope) {
+      //   $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
+      //     .then(function(response) {
+      //       $rootScope.activities = response.data;
+      //   })
+      .controller("NewActivityController", function($scope, $http) {
+        $scope.activity = {
+          activity_name: '',
+          start_date: ''
+        }
+        $scope.submit= function() {
+          $http.post('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json', $scope.activity);
+        };
+        $scope.activity = {
+          activity_name: '',
+          start_date: ''
+        };
+      // });
 }) //END module
 
 
