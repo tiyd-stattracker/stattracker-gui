@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server --directory",
+    "start:dev": "browser-sync start --server --directory --startPath='dist/index.html'",
     "sass": "node-sass src/scss/main.scss src/css/main.css",
     "install:bower": "bower install --save",
     "postinstall:bower": "wiredep --src 'src/*.html'",
@@ -15,7 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/tiyd-stattracker/stattracker-gui.git"
   },
-  "author": "Shay Hall",
+  "author": "Shay Hall <hallshay@gmail.com>",
+  "contributor": "Rosa Lopez Sanchez <r215130@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tiyd-stattracker/stattracker-gui/issues"
