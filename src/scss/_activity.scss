@@ -1,0 +1,57 @@
+h2.activity-subheader{
+  text-align: center;
+  font-family: 'Roboto Mono';
+  color: #928999;
+}
+ul.event-list {
+  box-sizing: border-box;
+  padding-left: 0;
+  width: 100%;
+  height: 4ex;
+  margin: 0 auto;
+  display: block;
+  li.event-list {
+    font-family: 'Roboto Mono';
+    width: 100%;
+    //height: 4ex;
+    margin: 0 auto;
+    font-size: 1em;
+    display: block;
+    //text-align: center;
+    border: 1px solid lightgray;
+    padding: 1ex 5% 0;
+    margin: 2ex auto;
+    p.log-info{
+      display: inline-block;
+    }
+    div.show-count{
+      display: none;
+    }
+    div.show-count.active{
+      display: block;
+      width: 100% * (1/2);
+      float: right;
+      //position: relative;
+      .log-info{
+        //float: right;
+      }
+    }
+    p.log-info-count{
+      border: 1px solid black;
+      text-align: center;
+    }
+    .log-info-count{
+      width: 3em;
+    }
+    .update-count{
+      display: none;
+    }
+    .update-count.active{
+      width: 100% * (1/2);
+      float: right;
+      display: block;
+    }
+
+
+  }
+}
