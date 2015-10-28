@@ -6,7 +6,7 @@
           redirectTo: '/login',
        })
        .when('/login',{
-         templateUrl: 'partials/user.html',
+         templateUrl: 'partials/login.html',
        })
        .when('/user',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
