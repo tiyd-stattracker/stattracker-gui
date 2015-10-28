@@ -8,8 +8,11 @@
        .when('/login',{
          templateUrl: 'partials/login.html',
        })
-       .when('/login',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
+       .when('/user',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
+       })
+       .when('/activity',{
+         templateUrl: 'partials/activity.html',
        })
   }) //END $routeProvider    //END module
       .controller('ListOfActivitesController', function($scope, $http) {
