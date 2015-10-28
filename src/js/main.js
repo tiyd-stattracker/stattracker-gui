@@ -8,7 +8,7 @@
        .when('/login',{
          templateUrl: 'partials/login.html',
        })
-       .when('/login',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
+       .when('/user',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
        })
   }) //END $routeProvider    //END module
@@ -30,5 +30,65 @@
           activity_name: '',
           start_date: ''
         };
-      });//END of "NewActivityController"
+      })//END of "NewActivityController"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//START SIGN UP & LOG IN ANGULAR
+
+  .controller("SignupController", function($scope, $http){ //CONTROLLER FOR SIGNUP
+    $scope.user = {
+      username: '',
+      password: ''
+    }
+    $scope.submit = function() {
+      $http.post('https://lit-hollows-3591.herokuapp.com/api/users/?format=json', $scope.users)
+        $scope.users = {};
+
+    };
+  });//CONTROLLER FOR SIGNUP
+
+
+
+
+
+
+
+
 })(); //END OF IIFE
