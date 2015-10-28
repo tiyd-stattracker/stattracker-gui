@@ -31,4 +31,19 @@
           start_date: ''
         };
       });//END of "NewActivityController"
-})(); //END OF IIFE
+
+})(); //END OF IIFE angular
+
+;(function(){
+  $("a.log-info").on('click', function(event){
+    event.preventDefault();
+    console.log(this.hash);
+    $(this.hash).removeClass("active").siblings().addClass("active")
+  });
+  $("a.update-info").on('click', function(event){
+    event.preventDefault();
+    console.log(this.hash);
+    $(this.hash).removeClass("active").siblings().addClass("active")
+  });
+
+})(); //END OF IIFE JS

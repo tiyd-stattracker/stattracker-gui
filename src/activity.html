@@ -18,18 +18,24 @@
     <body ng-app='StatTracker'>
       <header> <h1 class="stattracker2000">Stat Tracker 2000</h1></header>
       <main ng-app='StatTracker' class="container">
-        <ng-view><span class="fa fa-spinner"></span>
 
           <h2 class="username-subheader">Shea Wolf</h2>
           <h2 class="activity-subheader">Activity_name</h2>
           <ul class="event-list">
-            <li class="event-list" ng-repeat>
-
+            <li class="event-list">
+                <p class="log-info">On  (date),</p>
+                <div id="show-count" class="show-count active">
+                  <p class="log-info log-info-count"> 67</p>
+                  <a class="log-info" href="#show-count"><button type="button" name="update">Update</button></a>
+                </div>
+                <div id="update-count" class="update-count">
+                  <input class="log-info-count" type="number" name="count" placeholder="#count">
+                  <a class="update-info" href="#update-count"><button type="submit" name="submit">Submit</button></a>
+                </div>
             </li>
           </ul>
 
 
-        </ng-view>
       </main>
       <!-- bower:js-->
       <script src="../bower_components/jquery/dist/jquery.js"></script>
