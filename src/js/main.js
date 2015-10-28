@@ -11,14 +11,27 @@
        .when('/user',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
        })
-       .when('/activity',{
+       .when('/activity/:id',{
          templateUrl: 'partials/activity.html',
-         })
+         controller: function($routeParams, $http, $scope){
+         var id = $routeParams.id
+           $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/"+ id +"/?format=json")
+           .then(function(response){
+             $scope.activity = response.data;
+             console.log('here')
+             console.log(response.data.logs[0].activity_id);
+           })
+         }
+       })
+
+       //.controller('ActivityController', function($scope, $http){
+
   }) //END $routeProvider    //END module
       .controller('ListOfActivitesController', function($scope, $http) {
         $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
           .then(function(response) {
             $scope.activities = response.data;
+            console.log(response.data);
         })
       }) //END of 'ListOfActivitesController'
       .controller("NewActivityController", function($scope, $http) {
@@ -35,39 +48,14 @@
         };
       })//END of "NewActivityController"
 
-      .controller('ActivityController', function($scope, $http){
-        $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/1/?format=json")
-        //console.log(arguments)
-        .then(function(response){
-
-
-          $scope.activity = response.data;
-          console.log(response.data.logs[0].activity_count);
-
-        })
-      })
-
-      // .controller('MainController', function($scope, $route, $routeParams, $location){
-      //   $scope.$route = $route;
-      //   $scope.$location = $location;
-      //   $scope.$routeParams = $routeParams;
-      // })
-      // .controller('activityController', function($scope, $routeParams, $http, $rootScope){
-      //   var id = $routeParams.activity.id -1;
-      //   $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/1/logs/?format=json")
-      //   .then(function(arguments){
-      //     $rootScope.activity = arguments.data[id];
-      //     $rootScope.activity_date = arguments.data[id].date;
-      //     $rootScope.activity_count = arguments.data[id].count;
-      //   })
-      //   .config(function($routeProvider, $locationProvider){
-      //     $routeProvider
-      //     .when('/activities',{
-      //       templateUrl:"partials/activity.html",
-      //       //controller:'activityController'
-      //     })
+      // .controller('ActivityController', function($scope, $http){
+      //   $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/?format=json")
+      //   .then(function(response){
+      //     $scope.activity = response.data;
+      //     console.log(response.data.logs[0].activity_id);
       //   })
       //})
+
 })(); //END OF IIFE angular
 
 ;(function(){

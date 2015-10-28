@@ -6,5 +6,7 @@
     <button class="create-activity" type="submit">Add Activity</button>
   </form>
 <ul class="activity-list" ng-controller="ListOfActivitesController">
-  <li class="activity-list"  ng-repeat="activity in activities">{{activity.activity_name}}</li>
+
+  <li class="activity-list"  ng-repeat="activity in activities"> <a src="#/activity/{{activity.id}}">{{activity.activity_name}}</a></li>
+
 </ul>
