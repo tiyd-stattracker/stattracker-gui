@@ -10,16 +10,16 @@
             <button class="login" type="button" name="login">Login</button>
           </form><!--end form login-->
 
-          <form class="register">
-            <label class="register" for="register">Register</label>
+          <form class="register" ng-controller="SignupController" ng-submit="submit()">
+            <label class="register" for="register">SignUp</label>
             <div class="register">
-              <input class="register-user" type="text" name="username" placeholder=" username">
+              <input class="register-user" type="text" name="username" placeholder=" username" ng-model="users.username">
             </div>
             <div >
-              <input class="register-password" type="text" name="password" placeholder=" password">
+              <input class="register-password" type="password" name="password" placeholder=" password" ng-model="users.password">
             </div>
-            <div >
+            <!-- <div >
               <input class="register-password" type="text" name="password" placeholder=" retype password">
-            </div>
-            <button class="register" type="button" name="register">Register</button>
+            </div> -->
+            <button class="register" type="submit" name="register">SignUp</button>
           </form><!--end form register-->

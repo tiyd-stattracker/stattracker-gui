@@ -56,7 +56,18 @@
       //   })
       //})
 
-})(); //END OF IIFE angular
+      //START SIGN UP & LOG IN ANGULAR
+        .controller("SignupController", function($scope, $http){ //CONTROLLER FOR SIGNUP
+          $scope.user = {
+            username: '',
+            password: ''
+          }
+          $scope.submit = function() {
+            $http.post('https://lit-hollows-3591.herokuapp.com/api/users/?format=json', $scope.users)
+              $scope.users = {};
+          };
+        });//CONTROLLER FOR SIGNUP
+      })(); //END OF IIFE
 
 ;(function(){
   $("a.log-info").on('click', function(event){
