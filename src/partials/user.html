@@ -7,8 +7,8 @@
   </form>
 <ul class="activity-list" ng-controller="ListOfActivitesController">
 
-  <li class="activity-list"  ng-repeat="activity in activities">
-    <a src="#/activity/{{activity.id}}">{{activity.activity_name}}</a>
+  <li class="activity-list"  ng-repeat="activity in activities | orderBy: '-id'">
+    <a href="#/activity/1">{{activity.activity_name}}</a>
   </li>
 
 </ul>

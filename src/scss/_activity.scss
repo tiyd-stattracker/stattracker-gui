@@ -28,7 +28,7 @@ ul.event-list {
       display: none;
     }
     div.show-count.active{
-      display: block;
+      display: none;
       width: 100% * (1/2);
       float: right;
       //position: relative;
@@ -44,7 +44,10 @@ ul.event-list {
       width: 3em;
     }
     .update-count{
-      display: none;
+      display: block;
+      width: 100% * (1/2);
+      float: right;
+      display: block;
     }
     .update-count.active{
       width: 100% * (1/2);
