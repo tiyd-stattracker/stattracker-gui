@@ -8,10 +8,27 @@
        .when('/login',{
          templateUrl: 'partials/login.html',
        })
-       .when('/login',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
+       .when('/user',{ //CHANGE THIS SO IT REDIRECTS AT THE RIGHT TIME (TO LOGIN)
          templateUrl: 'partials/user.html',
        })
-  }) //END $routeProvider    //END module
+       .when('/activity/:id',{
+         templateUrl: 'partials/activity.html',
+         controller: function($routeParams, $http, $scope){
+         var id = $routeParams.id;
+           $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/"+ id +"/?format=json")
+           .then(function(response){
+             $scope.activity = response.data;
+          // $scope.log = {
+          //   activity_count: '',
+          // }
+          // $scope.submit = function() {
+          //   $http.patch('https://lit-hollows-3591.herokuapp.com/api/activities/1/logs/1?format=json', $scope.logs)
+          //   $scope.logs = {};
+          //   };
+          })
+         }
+       })
+    }) //END $routeProvider    //END module
       .controller('ListOfActivitesController', function($scope, $http) {
         $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
           .then(function(response) {
@@ -25,10 +42,43 @@
         }
         $scope.submit= function() {
           $http.post('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json', $scope.activity);
+        $scope.activity = {  };
         };
-        $scope.activity = {
-          activity_name: '',
-          start_date: ''
-        };
-      });//END of "NewActivityController"
-})(); //END OF IIFE
+        $http.get('https://lit-hollows-3591.herokuapp.com/api/activities/?format=json')
+          .then(function(response) {
+            $scope.activities = response.data;
+        })
+      })//END of "NewActivityController"
+
+      // .controller('ActivityController', function($scope, $http){
+      //   $http.get("https://lit-hollows-3591.herokuapp.com/api/activities/?format=json")
+      //   .then(function(response){
+      //     $scope.activity = response.data;
+      //     console.log(response.data.logs[0].activity_id);
+      //   })
+      //})
+
+      //START SIGN UP & LOG IN ANGULAR
+        .controller("SignupController", function($scope, $http){ //CONTROLLER FOR SIGNUP
+          $scope.user = {
+            username: '',
+            password: ''
+          }
+          $scope.submit = function() {
+            $http.post('https://lit-hollows-3591.herokuapp.com/api/users/?format=json', $scope.users)
+              $scope.users = {};
+          };
+        })//CONTROLLER FOR SIGNUP
+      })(); //END OF IIFE
+
+;(function(){
+  $("a.log-info").on('click', function(event){
+    event.preventDefault();
+    $(this.hash).removeClass("active").siblings().addClass("active")
+  });
+  $("a.update-info").on('click', function(event){
+    event.preventDefault();
+    $(this.hash).removeClass("active").siblings().addClass("active")
+  });
+
+})(); //END OF IIFE JS
