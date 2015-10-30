@@ -4,13 +4,16 @@
   <a href="#/user"><h2 class="username-subheader">Shea Wolf</h2></a>
   <h2 class="activity-subheader">{{activity.activity_name}}activity</h2>
   <ul class="event-list">
-    <li class="event-list" ng-repeat="log in activity.logs">
+    <li class="event-list" ng-repeat="log in activity.logs" ng-init="editing = false">
         <p class="log-info">On {{log.activity_date}}</p>
-        <div id="show-count" class="show-count active">
-          <button type="button" name="update">Update</button>
+        <div id="show-count" class="show-count"
+          ng-class="{ active: !editing }">
+          <button type="button" name="update"
+            ng-click="editing = true">Update</button>
         </div>
         <form id="update-count" class="update-count" ng-submit="submit()">
-          <p class="log-info log-info-count"> {{log.activity_count}}</p>
+          <p class="log-info log-info-count"
+            ng-class="{ active: editing }"> {{log.activity_count}}</p>
           <input class="log-info-count" type="number" name="count" ng-model="log.activity_count">
           <button type="submit" name="submit">Submit</button>
         </form>
