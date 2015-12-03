@@ -1,9 +1,10 @@
   <!-- <section ng-controller="ActivityController"> -->
 
-
   <a href="#/user"><h2 class="username-subheader">Shea Wolf</h2></a>
   <h2 class="activity-subheader">{{activity.activity_name}}activity</h2>
   <ul class="event-list">
+    <span ng-hide="true" class="fa fa-spinner fa-spin"></span>
+
     <li class="event-list" ng-repeat="log in activity.logs">
         <p class="log-info">On {{log.activity_date}}</p>
         <div id="show-count" class="show-count active">

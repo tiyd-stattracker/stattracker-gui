@@ -18,9 +18,8 @@
     <body ng-app='StatTracker'>
       <header> <h1 class="stattracker2000">Stat Tracker 2000</h1></header>
       <main ng-app='StatTracker' class="container">
-        <ng-view><span class="fa fa-spinner"></span>
-
-
+        <ng-view>
+          <span ng-hide="false" class="fa fa-spinner fa-spin"></span>
         </ng-view>
       </main>
       <!-- bower:js-->

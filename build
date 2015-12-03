@@ -12,6 +12,10 @@ mkdir dist/css/
 npm run sass
 cp src/css/main.css dist/css/
 
+echo 'Step 2.5: Copy all the Fonts'
+nkdir dist/fonts/
+cp -r src/fonts dist/
+
 echo 'Step 3: Copy all the JS'
 mkdir -p dist/js && cp -r src/js dist/
 
